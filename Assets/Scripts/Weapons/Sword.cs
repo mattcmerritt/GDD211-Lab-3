@@ -10,4 +10,9 @@ public class Sword : Weapon
         base.UseWeapon(inventory);
         inventory.GetComponent<Animator>().SetTrigger("Swing");
     }
+
+    public static int GetDamage()
+    {
+        return 100;
+    }
 }

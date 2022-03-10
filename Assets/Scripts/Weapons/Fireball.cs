@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : Projectile
+public class Fireball : Projectile, IDamageDealing
 {
     private Enemy Target;
 
@@ -36,5 +36,10 @@ public class Fireball : Projectile
             Direction = Vector3.Normalize(Target.transform.position - transform.position);
             transform.position += Direction * Speed * Time.deltaTime;
         }
+    }
+
+    public int GetDamage()
+    {
+        return 25;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : Projectile
+public class Arrow : Projectile, IDamageDealing
 {
     protected override void Start()
     {
@@ -24,5 +24,8 @@ public class Arrow : Projectile
         }
     }
 
-    // Nothing really special about arrows yet
+    public int GetDamage()
+    {
+        return 50;
+    }
 }

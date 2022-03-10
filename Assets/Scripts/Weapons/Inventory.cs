@@ -78,4 +78,11 @@ public class Inventory : MonoBehaviour
             return Vector3.down;
         }
     }
+
+    // this was necessary because the collision detection for the sword was done here
+    // 
+    public bool HasSword()
+    {
+        return ActiveWeapon == Sword;
+    }
 }
