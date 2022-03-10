@@ -33,7 +33,7 @@ public abstract class Enemy : MonoBehaviour
 
         if (Health <= 0)
         {
-            // count score
+            FindObjectOfType<UI>().IncrementScore();
             Destroy(gameObject);
         }
     }

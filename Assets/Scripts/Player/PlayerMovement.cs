@@ -76,11 +76,13 @@ public class PlayerMovement : MonoBehaviour
             Health -= damage;
             Debug.LogWarning("Took damage!");
             TimeUntilNextHit = HitTimer;
+            FindObjectOfType<UI>().UpdateHealth(Health);
         }
         if (Health <= 0)
         {
             Debug.LogError("Player is dead!");
             Destroy(gameObject);
+            FindObjectOfType<UI>().ShowButton();
         }
     }
 }
