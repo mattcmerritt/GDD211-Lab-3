@@ -20,9 +20,16 @@ public abstract class Projectile : MonoBehaviour
         Direction = direction;
     }
 
-
     public virtual void Move(float speed)
     {
         transform.position += Direction * Speed * Time.deltaTime;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8) // outside the walls
+        {
+            Destroy(gameObject);
+        }
     }
 }

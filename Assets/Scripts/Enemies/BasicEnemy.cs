@@ -6,6 +6,8 @@ public class BasicEnemy : Enemy
 {
     [SerializeField]
     private float ChaseSpeed;
+    [SerializeField]
+    private int Damage = 10;
 
     public override void Attack()
     {
@@ -14,8 +16,11 @@ public class BasicEnemy : Enemy
 
     public override void Move()
     {
-        Vector3 direction = Vector3.Normalize(FindObjectOfType<PlayerMovement>().transform.position - transform.position);
-        transform.position += direction * ChaseSpeed * Time.deltaTime;
+        if (FindObjectOfType<PlayerMovement>() != null)
+        {
+            Vector3 direction = Vector3.Normalize(FindObjectOfType<PlayerMovement>().transform.position - transform.position);
+            transform.position += direction * ChaseSpeed * Time.deltaTime;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -23,7 +28,7 @@ public class BasicEnemy : Enemy
         PlayerMovement player = collision.collider.GetComponent<PlayerMovement>();
         if (player != null)
         {
-            player.TakeDamage();
+            player.TakeDamage(Damage);
         }
     }
 }

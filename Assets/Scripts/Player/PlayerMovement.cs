@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0, 10)]
     private float Speed;
 
+    // Health data
+    [SerializeField]
+    private int Health = 100;
+    private float HitTimer = 0.5f;
+    private float TimeUntilNextHit = 0;
+
     private void Update()
     {
         // Get user inputs
@@ -50,6 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
         // Sending direction to inventory to rotate weapon
         GetComponentInChildren<Inventory>().SetDirection(Direction);
+
+        // i-frames for being hit
+        if (TimeUntilNextHit > 0f)
+        {
+            TimeUntilNextHit -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
@@ -57,10 +69,18 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + InputDirection * Speed * Time.fixedDeltaTime);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        // start hitstun timer
-        // lose health
-        Debug.LogWarning("Took damage!");
+        if (TimeUntilNextHit <= 0)
+        {
+            Health -= damage;
+            Debug.LogWarning("Took damage!");
+            TimeUntilNextHit = HitTimer;
+        }
+        if (Health <= 0)
+        {
+            Debug.LogError("Player is dead!");
+            Destroy(gameObject);
+        }
     }
 }
