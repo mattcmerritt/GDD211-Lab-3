@@ -281,6 +281,36 @@ MonoBehaviour:
   ani: {fileID: 496358685}
   rb: {fileID: 496358686}
   Speed: 2.04
+--- !u!1 &677037690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677037691}
+  m_Layer: 6
+  m_Name: Firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &677037691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677037690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1490123926}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +517,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 677037691}
   m_Father: {fileID: 496358689}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -604,5 +635,9 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: f79d1e303356a92448719168d8048198, type: 3}
   Bow:
     Sprite: {fileID: 21300000, guid: 4b8b72e35679aca478f735d5979825f2, type: 3}
+    ArrowPrefab: {fileID: 9189028825156259466, guid: ef92e01fd5ab4434d8139556394fd5f7, type: 3}
+    FirePoint: {fileID: 677037690}
   Wand:
     Sprite: {fileID: 21300000, guid: ff324bcdbc4ded04988890525db6b6ae, type: 3}
+    FireballPrefab: {fileID: 3831311557635288134, guid: 5364cdc0eb3486f4f957017b62f07f46, type: 3}
+    FirePoint: {fileID: 677037690}
