@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    private float BasicTime = 1.5f, RangedTime = 3f;
-    private float BasicTimer = 1.5f, RangedTimer = 3f;
+    private float BasicTime = 1.5f, RangedTime = 7f;
+    private float BasicTimer = 1.5f, RangedTimer = 7f;
 
     [SerializeField]
     private float BoundX, BoundY;
@@ -50,7 +50,7 @@ public class SpawnEnemies : MonoBehaviour
         }
         else
         {
-            RangedTime -= Time.deltaTime;
+            RangedTimer -= Time.deltaTime;
         }
     }
 
