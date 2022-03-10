@@ -11,11 +11,11 @@ public class Fireball : Projectile
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         Enemy closest = null;
-        float distance = Mathf.NegativeInfinity;
+        float distance = Mathf.Infinity;
 
         foreach (Enemy e in enemies)
         {
-            if (Vector3.Distance(transform.position, e.transform.position) > distance)
+            if (Vector3.Distance(transform.position, e.transform.position) < distance)
             {
                 closest = e;
                 distance = Vector3.Distance(transform.position, e.transform.position);
