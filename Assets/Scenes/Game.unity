@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 496358690}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,11 +414,11 @@ GameObject:
   m_Component:
   - component: {fileID: 949027846}
   - component: {fileID: 949027845}
-  - component: {fileID: 949027844}
   - component: {fileID: 949027848}
   - component: {fileID: 949027847}
+  - component: {fileID: 949027844}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BasicEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  ChaseSpeed: 3
 --- !u!212 &949027845
 SpriteRenderer:
   m_ObjectHideFlags: 0

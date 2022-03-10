@@ -56,4 +56,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + InputDirection * Speed * Time.fixedDeltaTime);
     }
+
+    public void TakeDamage()
+    {
+        // start hitstun timer
+        // lose health
+        Debug.LogWarning("Took damage!");
+    }
 }
